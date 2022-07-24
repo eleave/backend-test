@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Warcraft",
+    "description": "Set in the Warcraft fantasy universe, World of Warcraft takes place within the world of Azeroth, approximately four years after the events of the previous game in the series, Warcraft III: The Frozen Throne.",
+    "price": 100,
+    "imageUrl": ""
+  },
+  {
+    "id": 2,
+    "name": "Diablo",
+    "description": "The game takes place in Sanctuary, the dark fantasy world of the Diablo Series, twenty years after the events of Diablo II. ",
+    "price": 80,
+    "imageUrl": ""
+  },
+  {
+    "id": 3,
+    "name": "StarCraft",
+    "description": "The story of Brood War is presented through its instruction manual, the briefings to each mission, and conversations within the missions themselves, along with the use of cinematic cut scenes at the end of each campaign",
+    "price": 80,
+    "imageUrl": ""
+  },
+  {
+    "id": 4,
+    "name": "Overwatch",
+    "description": "Described as a hero shooter, Overwatch assigns players into two teams of six, with each player selecting from a large roster of characters, known as heroes, with unique abilities.",
+    "price": 100,
+    "imageUrl": ""
+  }
+]

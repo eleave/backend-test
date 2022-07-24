@@ -1,0 +1,60 @@
+openapi: 3.0.0
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Product identifier
+        name:
+          type: string
+          description: Product name
+        description:
+          type: string
+          description: Product description
+        price:
+          type: number
+          description: Product price
+        imageUrl:
+          type: string
+          description: Product imageUrl
+    ProductList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Product'
+info:
+  title: ''
+  description: ''
+  version: 7b5b358f-9be1-4d59-84ae-238501d436e4
+paths:
+  /products:
+    get:
+      operationId: getProductList
+      description: Get the product list
+      parameters: []
+      responses:
+        '200':
+          description: Status 200 Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductList'
+  '/products/{productId}':
+    get:
+      operationId: getProductById
+      description: Get product by productId
+      parameters:
+        - name: productId
+          in: path
+          description: Product id
+          required: true
+          schema:
+            type: number
+      responses:
+        '200':
+          description: Status 200 Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
