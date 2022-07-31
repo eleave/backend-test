@@ -13,9 +13,12 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
   APIGatewayProxyResult
 >;
 
-export const formatJSONResponse = (response: Record<string, any>) => {
+export const formatJSONResponse = (
+  response: Record<string, any>,
+  statusCode = 200
+) => {
   return {
-    statusCode: 200,
+    statusCode,
     body: JSON.stringify(response),
     headers: {
       // Required for CORS support to work
