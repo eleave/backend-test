@@ -1,0 +1,6 @@
+{
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"name\": \"Hearthstone\", \"description\": \"Deceptively simple and insanely fun, Hearthstone is a fast-paced strategy card game from Blizzard Entertainment.\", \"price\": 50, \"count\": 1}"
+}
