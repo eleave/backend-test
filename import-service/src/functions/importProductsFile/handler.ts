@@ -1,15 +1,27 @@
-// import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
 import { formatJSONResponse } from "@libs/api-gateway";
 import { middyfy } from "@libs/lambda";
 
-// import schema from './schema';
-// const importProductsFile: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (event) => {
+import { S3 } from "aws-sdk";
+const BUCKET = "import-service-backend-test";
 
 const importProductsFile = async (event) => {
-  return formatJSONResponse({
-    message: `Hello, welcome to the exciting Serverless world!`,
-    event,
-  });
+  const s3 = new S3({ region: "eu-west-1" });
+  const fileName = event.queryStringParameters.name;
+  const filePath = `uploaded/${fileName}`;
+
+  const params = {
+    Bucket: BUCKET,
+    Key: filePath,
+    Expires: 60,
+    ContentType: "text/csv",
+  };
+
+  try {
+    const url = await s3.getSignedUrlPromise("putObject", params);
+    return formatJSONResponse(url);
+  } catch (error) {
+    return formatJSONResponse(error, 500);
+  }
 };
 
 export const importProductsFileHandler = middyfy(importProductsFile);
