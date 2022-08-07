@@ -15,6 +15,9 @@ Product example:
 }
 ```
 
+### Service Import Product API:
+- GET importProductsFile - https://w7q5dzf57j.execute-api.eu-west-1.amazonaws.com/dev/import?name=
+
 ### FE repository:
 - https://github.com/eleave/shop-react-redux-cloudfront
 
